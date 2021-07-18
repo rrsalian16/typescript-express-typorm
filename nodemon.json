@@ -1,0 +1,15 @@
+{
+  "restartable": "rs",
+  "ignore": [".git", "node_modules/", "build/", "coverage/"],
+  "watch": ["src/"],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": ".js,.json,.ts",
+  "exec": "ts-node ./src/index.ts --watch src --ext .ts",
+  "events": {
+    "restart": "kill-port 3333 && rs",
+    "crash": "kill-port 3333 && rs"
+  },
+  "delay": "1500"
+}
