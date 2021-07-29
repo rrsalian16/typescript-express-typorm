@@ -11,7 +11,8 @@
     "lint:fix": "eslint . --ext .ts --fix",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "type:check": "tsc --pretty --noEmit"
+    "type:check": "tsc --pretty --noEmit",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -41,28 +42,23 @@
     "@types/jsonwebtoken": "8.5.3",
     "@types/lodash": "4.14.170",
     "@types/nanoid": "3.0.0",
+    "@types/node": "8.0.29",
     "@types/pino": "6.3.8",
     "@types/yup": "0.29.12",
-    "@types/node": "8.0.29",
     "@typescript-eslint/eslint-plugin": "4.28.3",
     "@typescript-eslint/parser": "4.28.3",
     "eslint": "7.30.0",
     "eslint-config-prettier": "^8.3.0",
-    "husky": "^7.0.0",
     "kill-port": "^1.6.1",
     "lint-staged": "^11.0.1",
     "nodemon": "2.0.9",
     "prettier": "^2.3.2",
     "rimraf": "^3.0.2",
-    "ts-node": "3.3.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "ts-node": "3.3.0",
+    "husky": "^7.0.0"
   },
   "lint-staged": {
-    ".": [
+    "*.{js,ts,md}": [
       "npm run prettier:fix",
       "npm run lint:check",
       "npm run type:check"
